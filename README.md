@@ -4,7 +4,7 @@ Grid Maniac
 
 ![alt text][4]
 
-Grid Maniac is a simple toll for front end developers and web designers.
+Grid Maniac is a simple tool for front-end developers and web designers.
 
 It includes
 ---
