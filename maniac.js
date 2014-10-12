@@ -104,7 +104,7 @@
  		$(this).toggleClass("active");
  		$(".baseline-container").toggleClass("block-r");
  		$(".row-info").toggleClass('z4');
- 		$(".main-monitor .baseline-amount").toggleClass('z0');
+ 		$(".main-monitor .baseline-amount, .main-monitor .vert-col-amount, .main-monitor .hor-col-amount").toggleClass('z0');
  	});
 
  	$(".right-a").click(function(e) {
