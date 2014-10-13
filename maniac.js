@@ -1,4 +1,11 @@
  $(function() {
+	 
+ 	var path = $('[data-path="self"]').attr('src');
+ 	var s = path.split("/");
+ 	s.pop();
+ 	s = s.join("/");
+
+ 	 
  	var tb = '<div id="draggable" class="ui-widget-content"><div class="main-monitor"><span class="baseline-amount">12</span><i class="baseline-icon fa fa-bars"></i><span class="vert-col-amount">12</span><i class="v-grid-icon fa fa-ellipsis-v"></i><span class="hor-col-amount">3</span><i class="h-grid-icon fa fa-ellipsis-v"></i><div class="m-circle"><a href="#">center</a></div></div><div class="baseline-container block-r"><a href="#" data-act="++" class="in-d-act pl ">+</a><a href="#" data-act="--"class="in-d-act min ">-</a><span class="baseline-amount">12</span><a href="#" class="bl-switch"><i class="fa fa-toggle-off"></i></a><div class="pie_progress" role="progressbar"></div></div><div class="vertical-grid-container block-r"><a href="#" data-act="++" class="in-v-act pl ">+</a><a href="#" data-act="--"class="in-v-act min ">-</a><span class="vert-col-amount">12</span><a href="#" class="vc-switch"><i class="fa fa-toggle-off"></i></a><div class="pie_progress_vert" role="progressbar"></div></div><div class="horizontal-grid-container"></div><div class="row-monitor"><div class="row-info z4"><a href="#"><i class="fa fa-dot-circle-o"></i></a><span>Row is </span><span class="status">on</span></div><a href="#" class="minimize"><i class="fa fa-ellipsis-h"></i></a></div><a class="ca left-a" href="#"><i class="fa fa-angle-left "></i></a><a class="ca top-a" href="#"><i class="fa fa-angle-up "></i></a><a class="ca right-a" href="#"><i class="fa fa-angle-right "></i></a><a href="#" class="maximize"><i class="fa fa-bars"></i></a></div>'
  	var vGrid = '<div class="vert-grid"><div class="grid-holder"><div class="sm-1"><div class="col"></div></div><div class="sm-1"><div class="col"></div></div><div class="sm-1"><div class="col"></div></div><div class="sm-1"><div class="col"></div></div><div class="sm-1"><div class="col"></div></div><div class="sm-1"><div class="col"></div></div><div class="sm-1"><div class="col"></div></div><div class="sm-1"><div class="col"></div></div><div class="sm-1"><div class="col"></div></div><div class="sm-1"><div class="col"></div></div><div class="sm-1"><div class="col"></div></div><div class="sm-1"><div class="col"></div></div></div></div>'
  	$("body").append(tb);
@@ -41,7 +48,7 @@
  		if ($(this).hasClass('is-on')) {
  			$(".bl-switch").children('i').addClass('fa-toggle-on');
  			$(".baseline-icon").addClass('active');
- 			$("body").append('<div style="background-image: url(js/ad-grid-maniac/img/grid-pattern/g-' + num + '.png)" id="baseline"></div>');
+ 			$("body").append('<div style="background-image: url('+s+'/img/grid-pattern/g-' + num + '.png)" id="baseline"></div>');
  		} else {
  			$(".bl-switch").children('i').removeClass('fa-toggle-on');
  			$(".baseline-icon").removeClass('active');
@@ -132,7 +139,7 @@
  		} else if ($(".m-circle a").hasClass('is-on') && $(this).children('i').hasClass('fa-toggle-on') == false) {
  			$(this).children('i').addClass('fa-toggle-on');
  			$(".baseline-icon").addClass('active');
- 			$("body").append('<div style="background-image: url(js/ad-grid-maniac/img/grid-pattern/g-' + num + '.png)" id="baseline"></div>');
+ 			$("body").append('<div style="background-image: url('+s+'/img/grid-pattern/g-' + num + '.png)" id="baseline"></div>');
  		};
 
 
@@ -163,7 +170,7 @@
  			$(".baseline-amount").text(num + 'px');
  			if ($("#baseline").length) {
  				$("#baseline").css({
- 					backgroundImage: 'url(js/ad-grid-maniac/img/grid-pattern/g-' + num + '.png)'
+ 					backgroundImage: 'url('+s+'/img/grid-pattern/g-' + num + '.png)'
  				});
  			};
  		};
@@ -173,7 +180,7 @@
  			$(".baseline-amount").text(num + 'px');
  			if ($("#baseline").length) {
  				$("#baseline").css({
- 					backgroundImage: 'url(js/ad-grid-maniac/img/grid-pattern/g-' + num + '.png)'
+ 					backgroundImage: 'url('+s+'/img/grid-pattern/g-' + num + '.png)'
  				});
  			};
  		};
